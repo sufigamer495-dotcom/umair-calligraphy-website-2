@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Umair Calligraphy</title>
+  <script>
+    // Single Page App redirect: redirect all 404s to index.html with the original path preserved
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+    var redirectTo = '/' + '#' + path + search + hash;
+    window.location.replace(redirectTo);
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>

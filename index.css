@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 36 32% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 36 32% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 36 32% 56%;
+    --radius: 0px;
+
+    --color-background: #FFFFFF;
+    --color-background-alt: #FAFAFA;
+    --color-surface: #F5F5F5;
+    --color-surface-dark: #1A1A1A;
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #666666;
+    --color-text-muted: #999999;
+    --color-text-inverse: #FFFFFF;
+    --color-accent: #B8956A;
+    --color-accent-hover: #A6845D;
+    --color-border: #E5E5E5;
+    --color-border-dark: #333333;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .label-uppercase {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.33;
+  }
+
+  .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.23;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 200ms ease-out;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    transform: scaleX(1);
+  }
+
+  .btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    transition: all 200ms ease-out;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: none;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverse);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-text-primary);
+  }
+
+  .btn-dark {
+    background-color: var(--color-surface-dark);
+    color: var(--color-text-inverse);
+  }
+
+  .btn-dark:hover {
+    background-color: #333333;
+  }
+
+  .btn-light {
+    background-color: var(--color-text-inverse);
+    color: var(--color-text-primary);
+  }
+
+  .btn-light:hover {
+    background-color: #F5F5F5;
+  }
+
+  .btn-outline-light {
+    background-color: transparent;
+    color: var(--color-text-inverse);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-outline-light:hover {
+    border-color: var(--color-text-inverse);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes chevron-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
